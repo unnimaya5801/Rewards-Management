@@ -17,6 +17,6 @@ public class Role {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private UUID id;
 
-    @Column(unique = true, nullable = false, length = 50)
-    private String roleName; 
+    @Column(unique = true, nullable = false)
+    private String roleName;
 }
