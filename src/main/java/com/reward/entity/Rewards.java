@@ -31,8 +31,9 @@ private byte[] image;
 @Column(nullable = false)
 private Integer points;
 
+@Builder.Default
 @Column(nullable = true)
-private LocalDateTime deletedAt;
+private Boolean isDeleted = false; 
 
 @Column(updatable = false)
 private LocalDateTime createdAt;
