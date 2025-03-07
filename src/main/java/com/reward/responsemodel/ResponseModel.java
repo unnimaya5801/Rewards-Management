@@ -3,7 +3,6 @@ package com.reward.responsemodel;
 import lombok.Data;
 
 @Data
-
 public class ResponseModel<T> {
     private int statusCode;
     private String status;
@@ -17,4 +16,11 @@ public class ResponseModel<T> {
         this.response = response;
     }
 
+    public static <T> ResponseModel<T> success(int statusCode, String message, T response) {
+        return new ResponseModel<>(statusCode, "Success", message, response);
+    }
+
+    public static <T> ResponseModel<T> error(int statusCode, String message) {
+        return new ResponseModel<>(statusCode, "Error", message, null);
+    }
 }
